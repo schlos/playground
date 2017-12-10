@@ -18,28 +18,35 @@ var trace1 = {
   type: "bar",
   name: 'AAPL High',
   x: unpack(rows, 'Datum.putovanja.polazak'),
-  y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn')
+  y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
+  text: unpack(rows, 'Odrediste')
 }
 
 var trace2 = {
   type: "bar",
   name: 'AAPL Low',
   x: unpack(rows, 'Datum.putovanja.polazak'),
-  y: unpack(rows, 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn')
+  y: unpack(rows, 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn'),
+  text: unpack(rows, 'Odrediste')
 }
 
 var trace3 = {
   type: "bar",
   name: 'AAPL Mid',
   x: unpack(rows, 'Datum.putovanja.polazak'),
-  y: unpack(rows, 'Iznos.troskova.reprezentacije.u.kn')
+  y: unpack(rows, 'Iznos.troskova.reprezentacije.u.kn'),
+  text: unpack(rows, 'Odrediste')
 }
 
 var data = [trace1,trace2,trace3];
 
 var layout = {
   title: 'Basic Time Series',
-  barmode: 'stack'};
+  barmode: 'stack',
+  separators: ',.0',
+  yaxis: {showexponent: 'all',
+  exponentformat: 'none'} 
+};
 
 
 Plotly.newPlot('myDiv', data, layout);
