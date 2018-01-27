@@ -163,7 +163,6 @@
                   name: 'Putni troškovi',
                   x: unpack(rows, 'Godina'),
                   y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
-                  text: unpack(rows, 'Odrediste'),
                   transforms: [{
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
@@ -177,7 +176,6 @@
                   name: 'Trošak smještaja',
                   x: unpack(rows, 'Godina'),
                   y: unpack(rows, 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn'),
-                  text: unpack(rows, 'Odrediste'),
                   transforms: [{
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
@@ -191,7 +189,6 @@
                   name: 'Trošak reprezentacije',
                   x: unpack(rows, 'Godina'),
                   y: unpack(rows, 'Iznos.troskova.reprezentacije.u.kn'),
-                  text: unpack(rows, 'Odrediste'),
                   transforms: [{
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
@@ -207,7 +204,8 @@
                   separators: ',.0',
                   yaxis: {showexponent: 'all',
                   exponentformat: 'none'},
-                  xaxis: {type: 'linear'},
+                  xaxis: {type: 'linear',
+              	  tickmode: 'linear'},
                   showlegend: true,
                   legend: {"orientation": "h"}
                 };
