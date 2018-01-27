@@ -77,7 +77,7 @@
 
                 var trace1 = {
                   type: "bar",
-                  name: 'Putni troškovi',
+                  name: 'Putni trošak',
                   x: unpack(rows, 'Datum.putovanja.polazak'),
                   y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
                   text: unpack(rows, 'Odrediste'),
@@ -160,7 +160,7 @@
 
                 var trace1 = {
                   type: "bar",
-                  name: 'Putni troškovi',
+                  name: 'Putni trošak',
                   x: unpack(rows, 'Godina'),
                   y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
                   transforms: [{
@@ -227,13 +227,85 @@
       <div class="col-sm-6 col-md-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Map Example
+            Omjer troška putovanja prema trajanju putovanja
           </div>
           <div class="chart-stage">
-            <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~jackp/10002.embed"></iframe>
+            <div id="grid-1-1">
+              <div id="chartThree" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+              <script>
+              <!-- ENTER JAVASCRIPT CODE HERE --> 
+              <!-- Chart 3 - Scatter plot with cost for a trip per length of trip in a time -->
+                Plotly.d3.csv("https://raw.githubusercontent.com/schlos/playground/gh-pages/dataset-sluzbenaputovanjaclanovavladeALL.csv", function(err, rows){
+
+                  function unpack(rows, key) {
+                  return rows.map(function(row) { return row[key]; });
+                }
+
+                // var thisPolitician = unpack(rows, 'Ime.i.prezime');
+
+                var trace1 = {
+                  mode: 'markers',
+                  type: "scatter",
+                  name: 'Putni trošak',
+                  x: unpack(rows, 'Datum.putovanja.polazak'),
+                  y: unpack(rows, 'Trajanje.putovanja.dana'),
+                  marker: { size: 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn' },
+                  transforms: [{
+                    type: 'filter',
+                    target: unpack(rows, 'Ime.i.prezime'),
+                    operation: '=',
+                    value: "Gabrijela Žalac"
+                  }]
+                }
+
+                var trace2 = {
+                  mode: 'markers',
+                  type: "scatter",
+                  name: 'Trošak smještaja',
+                  x: unpack(rows, 'Datum.putovanja.polazak'),
+                  y: unpack(rows, 'Trajanje.putovanja.dana'),
+                  marker: { size: 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn' },
+                  transforms: [{
+                    type: 'filter',
+                    target: unpack(rows, 'Ime.i.prezime'),
+                    operation: '=',
+                    value: "Gabrijela Žalac"
+                  }]
+                }
+
+                var trace3 = {
+                  mode: 'markers',
+                  type: "scatter",
+                  name: 'Trošak reprezentacije',
+                  x: unpack(rows, 'Datum.putovanja.polazak'),
+                  y: unpack(rows, 'Trajanje.putovanja.dana'),
+                  marker: { size: 'Iznos.troskova.reprezentacije.u.kn' },
+                  transforms: [{
+                    type: 'filter',
+                    target: unpack(rows, 'Ime.i.prezime'),
+                    operation: '=',
+                    value: "Gabrijela Žalac"
+                  }]
+                }
+
+                var data = [trace1,trace2,trace3];
+
+                var layout = {
+                  separators: ',.0',
+                  yaxis: {type: 'linear',
+              	  tickmode: 'linear'},
+                  showlegend: true,
+                  legend: {"orientation": "h"}
+                };
+
+
+                Plotly.newPlot('chartThree', data, layout);
+                })
+              </script>
+            </div>
           </div>
           <div class="chart-notes">
-            Make <a href="https://plot.ly/python/choropleth-maps/">choropleth maps, <a href="https://plot.ly/python/bubble-maps/">bubble maps</a>, and <a href="https://plot.ly/python/lines-on-maps/">lines on maps</a> in Python          
+            Trošak putnih troškova u odnosu na trajanje putovanja.     
           </div>
         </div>
       </div>
@@ -270,7 +342,7 @@
       <div class="col-sm-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Hover Text Example
+            Hover Text Example OVDJE
           </div>
           <div class="chart-stage">
             <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~jackp/10057.embed"></iframe>
