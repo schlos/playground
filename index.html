@@ -63,7 +63,7 @@
           </div>
           <div class="chart-stage">
             <div id="grid-1-1">
-              <div id="myDiv" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+              <div id="chartOne" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
               <script>
               <!-- ENTER JAVASCRIPT CODE HERE --> 
               <!-- Chart 1 - Stacked bar chart with expenses in multiple types per trip -->
@@ -129,7 +129,7 @@
                 };
 
 
-                Plotly.newPlot('myDiv', data, layout);
+                Plotly.newPlot('chartOne', data, layout);
                 })
               </script>
             </div>
@@ -146,10 +146,10 @@
           </div>
           <div class="chart-stage">
             <div id="grid-1-1">
-              <div id="myDiv" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+              <div id="chartTwo" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
               <script>
               <!-- ENTER JAVASCRIPT CODE HERE --> 
-              <!-- Chart 1 - Stacked bar chart with expenses in multiple types per trip -->
+              <!-- Chart 2 - Stacked bar chart with expenses per year -->
                 Plotly.d3.csv("https://raw.githubusercontent.com/schlos/playground/gh-pages/dataset-sluzbenaputovanjaclanovavladeALL.csv", function(err, rows){
 
                   function unpack(rows, key) {
@@ -212,7 +212,7 @@
                 };
 
 
-                Plotly.newPlot('myDiv', data, layout);
+                Plotly.newPlot('chartTwo', data, layout);
                 })
               </script>
             </div>
