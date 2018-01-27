@@ -59,7 +59,7 @@
       <div class="col-sm-8">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Troškovi službenog putovanja
+            Troškovi pojedinačnog službenog putovanja kroz vrijeme
           </div>
           <div class="chart-stage">
             <div id="grid-1-1">
@@ -142,13 +142,83 @@
       <div class="col-sm-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Bar Chart Example
+            Troškovi službenih putovanja u godini
           </div>
           <div class="chart-stage">
-            <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~jackp/10021.embed"></iframe>
+            <div id="grid-1-1">
+              <div id="myDiv" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+              <script>
+              <!-- ENTER JAVASCRIPT CODE HERE --> 
+              <!-- Chart 1 - Stacked bar chart with expenses in multiple types per trip -->
+                Plotly.d3.csv("https://raw.githubusercontent.com/schlos/playground/gh-pages/dataset-sluzbenaputovanjaclanovavladeALL.csv", function(err, rows){
+
+                  function unpack(rows, key) {
+                  return rows.map(function(row) { return row[key]; });
+                }
+
+                // var thisPolitician = unpack(rows, 'Ime.i.prezime');
+
+                var trace1 = {
+                  type: "bar",
+                  name: 'Putni troškovi',
+                  x: unpack(rows, 'Godina'),
+                  y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
+                  text: unpack(rows, 'Odrediste'),
+                  transforms: [{
+                    type: 'filter',
+                    target: unpack(rows, 'Ime.i.prezime'),
+                    operation: '=',
+                    value: "Gabrijela Žalac"
+                  }]
+                }
+
+                var trace2 = {
+                  type: "bar",
+                  name: 'Trošak smještaja',
+                  x: unpack(rows, 'Godina'),
+                  y: unpack(rows, 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn'),
+                  text: unpack(rows, 'Odrediste'),
+                  transforms: [{
+                    type: 'filter',
+                    target: unpack(rows, 'Ime.i.prezime'),
+                    operation: '=',
+                    value: "Gabrijela Žalac"
+                  }]
+                }
+
+                var trace3 = {
+                  type: "bar",
+                  name: 'Trošak reprezentacije',
+                  x: unpack(rows, 'Godina'),
+                  y: unpack(rows, 'Iznos.troskova.reprezentacije.u.kn'),
+                  text: unpack(rows, 'Odrediste'),
+                  transforms: [{
+                    type: 'filter',
+                    target: unpack(rows, 'Ime.i.prezime'),
+                    operation: '=',
+                    value: "Gabrijela Žalac"
+                  }]
+                }
+
+                var data = [trace1,trace2,trace3];
+
+                var layout = {
+                  barmode: 'stack',
+                  separators: ',.0',
+                  yaxis: {showexponent: 'all',
+                  exponentformat: 'none'},
+                  showlegend: true,
+                  legend: {"orientation": "h"}
+                };
+
+
+                Plotly.newPlot('myDiv', data, layout);
+                })
+              </script>
+            </div>
           </div>
           <div class="chart-notes">
-            Make a <a href="https://plot.ly/javascript-graphing-library/bar-charts/">bar chart</a> in Python
+            Prikaz putnih troškova u kunama ministra/icu i pratnju zbirno po godinama.
           </div>
         </div>
       </div>
