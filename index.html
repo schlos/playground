@@ -249,7 +249,9 @@
                   name: 'Putni trošak',
                   x: unpack(rows, 'Datum.putovanja.polazak'),
                   y: unpack(rows, 'Trajanje.putovanja.dana'),
-                  marker: { size: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn') },
+                  marker: { size: unpack(rows, 'Broj.osoba.u.pratnji'), 
+                  color: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
+                  'showscale': true },
                   text: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
                   transforms: [{
                     type: 'filter',
