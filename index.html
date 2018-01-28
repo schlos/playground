@@ -34,15 +34,15 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><!--Vlada RH <span class="caret"></span>--><span class="glyphicon glyphicon-user"></span></a>
           </li>
           <li class="dropdown">
-			<div class="form-group">
-			    <select class="form-control navbar-btn" id="thisPolitician">
-			      <option>Izaberi političara...</option>
-			      <option selected>Gabrijela Žalac</option>
-			      <option>Ime2</option>
-			      <option>Ime3</option>
-			      <option>Ime4</option>
-			    </select>
-			</div>
+      			<div class="form-group">
+      			    <select class="form-control navbar-btn" id="thisPolitician">
+      			      <option>Izaberi političara...</option>
+      			      <option selected>Gabrijela Žalac</option>
+      			      <option>Ime2</option>
+      			      <option>Ime3</option>
+      			      <option>Ime4</option>
+      			    </select>
+      			</div>
           </li>
           <li class="dropdown">
 			<button type="button" class="btn btn-danger navbar-btn" onclick="selectPolitician()">Prikaži</button>
@@ -109,7 +109,7 @@
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
                     operation: '=',
-                    value: politicianName
+                    value: politicianName;
                   }]
                 }
 
@@ -123,7 +123,7 @@
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
                     operation: '=',
-                    value: politicianName
+                    value: politicianName;
                   }]
                 }
 
@@ -137,7 +137,7 @@
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
                     operation: '=',
-                    value: politicianName
+                    value: politicianName;
                   }]
                 }
 
