@@ -62,10 +62,6 @@
     </div>
   </div>
 
-  <script language="javascript" type="text/javascript">
-      var mySelection;
-  </script>
-
   <script>
 	function selectPolitician() {
 	    var x = document.getElementById("thisPolitician").selectedIndex;
@@ -109,7 +105,7 @@
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
                     operation: '=',
-                    value: 'politicianName'
+                    value: politicianName
                   }]
                 }
 
@@ -123,7 +119,7 @@
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
                     operation: '=',
-                    value: 'politicianName'
+                    value: politicianName
                   }]
                 }
 
@@ -137,7 +133,7 @@
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
                     operation: '=',
-                    value: 'politicianName'
+                    value: politicianName
                   }]
                 }
 
