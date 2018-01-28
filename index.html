@@ -62,6 +62,10 @@
     </div>
   </div>
 
+  <script language="javascript" type="text/javascript">
+      var mySelection;
+  </script>
+
   <script>
 	function selectPolitician() {
 	    var x = document.getElementById("thisPolitician").selectedIndex;
@@ -93,6 +97,7 @@
                 }
 
                 // var thisPolitician = unpack(rows, 'Ime.i.prezime');
+                var name = selectPolitician();
 
                 var trace1 = {
                   type: "bar",
