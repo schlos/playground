@@ -32,13 +32,19 @@
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><!--Vlada RH <span class="caret"></span>--><span class="glyphicon glyphicon-user"></span></a>
-            <ul class="dropdown-menu" id="thisPolitician">
-              <li><a id="thisPolitician1" href="#" onclick="selectPolitician();return false;">Gabrijela Žalac</a></li>
-              <li><a id="thisPolitician2" href="#">Ime2 Prezime2</a></li>
-              <li><a id="thisPolitician3" href="#">Ime3 Prezime3</a></li>
-            </ul>
           </li>
-
+          <li class="dropdown">
+	        <select class="selectpicker" id="thisPolitician">
+			  <option>&nbsp</option>
+			  <option>Gabrijela Žalac</option>
+			  <option>Relish</option>
+			</select>
+          </li>
+          <li class="dropdown">
+			<button type="button" class="btn" onclick="selectPolitician()">Prikaži</button>
+          </li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><!--<span class="caret"></span>--></a>
             <ul class="dropdown-menu">
