@@ -294,9 +294,14 @@
                 var layout = {
                   separators: ',.0',
                   autosize: true,
-                  xaxis: {showgrid: false},
-                  showlegend: true,
-                  legend: {"orientation": "h"}
+                  xaxis: { constrain: "range",
+                  constraintoward: "center,"
+                  showgrid: false, 
+                  autorange: true },
+                  yaxis: { constrain: "range", 
+                  constraintoward: "middle,"
+                  autorange: true },
+                  showlegend: false
                 };
 
 
