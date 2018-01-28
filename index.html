@@ -261,40 +261,9 @@
                   }]
                 }
 
-                var trace2 = {
-                  mode: 'markers',
-                  type: "scatter",
-                  name: 'Trošak smještaja',
-                  x: unpack(rows, 'Datum.putovanja.polazak'),
-                  y: unpack(rows, 'Trajanje.putovanja.dana'),
-                  marker: { size: 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn' },
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: "Gabrijela Žalac"
-                  }]
-                }
-
-                var trace3 = {
-                  mode: 'markers',
-                  type: "scatter",
-                  name: 'Trošak reprezentacije',
-                  x: unpack(rows, 'Datum.putovanja.polazak'),
-                  y: unpack(rows, 'Trajanje.putovanja.dana'),
-                  marker: { size: 'Iznos.troskova.reprezentacije.u.kn' },
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: "Gabrijela Žalac"
-                  }]
-                }
-
                 var data = [trace1];
 
                 var layout = {
-                  opacity:0.4,
                   xaxis: { constrain: "range",
                   constraintoward: "center",
                   showgrid: false, 
