@@ -249,7 +249,7 @@
                   name: 'Putni trošak',
                   x: unpack(rows, 'Datum.putovanja.polazak'),
                   y: unpack(rows, 'Trajanje.putovanja.dana'),
-                  marker: { size: 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn' },
+                  marker: { size: 120 },
                   transforms: [{
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
@@ -264,7 +264,7 @@
                   name: 'Trošak smještaja',
                   x: unpack(rows, 'Datum.putovanja.polazak'),
                   y: unpack(rows, 'Trajanje.putovanja.dana'),
-                  marker: { size: 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn' },
+                  marker: { size: 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn,Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn' },
                   transforms: [{
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
@@ -292,6 +292,7 @@
 
                 var layout = {
                   separators: ',.0',
+                  xaxis: {showgrid: false},
                   showlegend: true,
                   legend: {"orientation": "h"}
                 };
