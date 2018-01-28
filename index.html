@@ -250,7 +250,7 @@
                   x: unpack(rows, 'Datum.putovanja.polazak'),
                   y: unpack(rows, 'Trajanje.putovanja.dana'),
                   marker: { size: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn') },
-                  text: unpack(rows, 'Odrediste'),
+                  text: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
                   transforms: [{
                     type: 'filter',
                     target: unpack(rows, 'Ime.i.prezime'),
@@ -292,7 +292,6 @@
                 var data = [trace1];
 
                 var layout = {
-                  separators: ',.0',
                   autosize: true,
                   xaxis: { constrain: "range",
                   constraintoward: "center",
