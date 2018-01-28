@@ -32,8 +32,8 @@
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><!--Vlada RH <span class="caret"></span>--><span class="glyphicon glyphicon-user"></span></a>
-            <ul class="dropdown-menu">
-              <li><a id="thisPolitician1" href="#">Ime Prezime</a></li>
+            <ul class="dropdown-menu" id="thisPolitician">
+              <li><a id="thisPolitician1" href="#" onclick="selectPolitician();return false;">Gabrijela Žalac</a></li>
               <li><a id="thisPolitician2" href="#">Ime2 Prezime2</a></li>
               <li><a id="thisPolitician3" href="#">Ime3 Prezime3</a></li>
             </ul>
@@ -51,6 +51,15 @@
       </div>
     </div>
   </div>
+
+  <script>
+	function selectPolitician() {
+	    var x = document.getElementById("thisPolitician").selectedIndex;
+	    var y = document.getElementById("thisPolitician").options;
+	    var mySelection = y[x].text;
+	    alert(mySelection);
+	}
+  </script>
 
   <div class="container-fluid">
 
@@ -264,13 +273,6 @@
                 var data = [trace1];
 
                 var layout = {
-                  xaxis: { constrain: "range",
-                  constraintoward: "center",
-                  showgrid: false, 
-                  autorange: true },
-                  yaxis: { constrain: "range", 
-                  constraintoward: "middle",
-                  autorange: true },
                   showlegend: false
                 };
 
