@@ -9,8 +9,6 @@
   <link rel="stylesheet" type="text/css" href="static/css/iThing.css" />
   <!-- Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <!-- bootstrap-select Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 </head>
 <body class="application">
 
@@ -36,11 +34,15 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><!--Vlada RH <span class="caret"></span>--><span class="glyphicon glyphicon-user"></span></a>
           </li>
           <li class="dropdown">
-			<div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle bs-placeholder btn-default navbar-btn" data-toggle="dropdown" role="button" title="Choose one of the following..."><span class="filter-option pull-left">Izaberi političara</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Gabrijela Žalac</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Ketchup</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Relish</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select id="thisPolitician" class="selectpicker" title="Izaberi političara" tabindex="-98"><option class="bs-title-option" value="">Izaberi političara</option>
+			<div class="form-group">
+			    <select class="form-control" id="thisPolitician">
+			      <option>Izaberi političara</option>
 			      <option>Gabrijela Žalac</option>
-			      <option>Ketchup</option>
-			      <option>Relish</option>
-			    </select></div>
+			      <option>Ime2</option>
+			      <option>Ime3</option>
+			      <option>Ime4</option>
+			    </select>
+			</div>
           </li>
           <li class="dropdown">
 			<button type="button" class="btn btn-danger navbar-btn" onclick="selectPolitician()">Prikaži</button>
@@ -371,9 +373,6 @@
   <!--<script type="text/javascript" src="../../assets/lib/jquery/dist/jquery.min.js"></script>-->
   <script type="text/javascript" src="static/js/slider/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="static/js/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  <!-- bootstrap-select Latest compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
   <!--<script type="text/javascript" src="static/js/holderjs/holder.js"></script>
   <script>
