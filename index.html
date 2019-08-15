@@ -36,11 +36,79 @@
           <li class="dropdown">
       			<div class="form-group">
       			    <select class="form-control navbar-btn" id="thisPolitician">
-      			      <option>Izaberi političara...</option>
-      			      <option selected>Gabrijela Žalac</option>
-      			      <option>Ime2</option>
-      			      <option>Ime3</option>
-      			      <option>Ime4</option>
+      			      <option selected>Izaberi političara...</option>
+      			      <option>Andrea Zlatar Violić</option>
+                  <option>Andrej Plenković</option>
+                  <option>Anka Mrak-Taritaš</option>
+                  <option>Ante Kotromanović</option>
+                  <option>Ante Šprlje</option>
+                  <option>Anton Kliman</option>
+                  <option>Arsen Bauk</option>
+                  <option>Berislav Šipuš</option>
+                  <option>Bernardica Juretić</option>
+                  <option>Blaženka Divjak</option>
+                  <option>Boris Lalovac</option>
+                  <option>Božo Petrov</option>
+                  <option>Branko Grčić</option>
+                  <option>Damir Krstičević</option>
+                  <option>Dario Nakić</option>
+                  <option>Darko Horvat </option>
+                  <option>Darko Lorencin</option>
+                  <option>Davor Božinović</option>
+                  <option>Davor Ivo Stier</option>
+                  <option>Davor Romić</option>
+                  <option>Dražen Bošnjaković</option>
+                  <option>Dubravka Jurlina Alibegović</option>
+                  <option>Gabrijela Žalac</option>
+                  <option>Gari Cappelli</option>
+                  <option>Goran Marić</option>
+                  <option>Gordan Maras</option>
+                  <option>Ivan Kovačić</option>
+                  <option>Ivan Vrdoljak</option>
+                  <option>Josip Buljević </option>
+                  <option>Lovro Kuščević</option>
+                  <option>Marija Pejčinović Burić</option>
+                  <option>Marko Pavić</option>
+                  <option>Martina Dalić</option>
+                  <option>Mihael Zmajlović</option>
+                  <option>Milan Kujundžić</option>
+                  <option>Milanka Opačić</option>
+                  <option>Mirando Mrsić</option>
+                  <option>Mirela Holy</option>
+                  <option>Miro Kovač </option>
+                  <option>Nada Murganić</option>
+                  <option>Nada Šikić</option>
+                  <option>Neven Mimica</option>
+                  <option>Nina Obuljen Koržinek</option>
+                  <option>Oleg Butković   </option>
+                  <option>Orsat Miljenić</option>
+                  <option>Pavo Barišić</option>
+                  <option>Predrag Matić</option>
+                  <option>Predrag Štromar</option>
+                  <option>Predrag Šustar</option>
+                  <option>Radimir Čačić</option>
+                  <option>Rajko Ostojić</option>
+                  <option>Ranko Ostojić</option>
+                  <option>Siniša Hajdaš Dončić</option>
+                  <option>Siniša Varga</option>
+                  <option>Slaven Dobrović</option>
+                  <option>Slavko Linić</option>
+                  <option>Tihomir Jakovina</option>
+                  <option>Tihomir Orešković</option>
+                  <option>Tomislav Ćorić</option>
+                  <option>Tomislav Karamarko</option>
+                  <option>Tomislav Panenić </option>
+                  <option>Tomislav Tolušić</option>
+                  <option>Tomo Medved</option>
+                  <option>Vedran Mornar</option>
+                  <option>Veljko Ostojić</option>
+                  <option>Vesna Pusić</option>
+                  <option>Vlaho Orepić</option>
+                  <option>Zdravko Marić</option>
+                  <option>Željko Jovanović</option>
+                  <option>Zlatko Hasanbegović</option>
+                  <option>Zlatko Komadina</option>
+                  <option>Zoran Milanović</option>
       			    </select>
       			</div>
           </li>
@@ -62,15 +130,6 @@
     </div>
   </div>
 
-  <script>
-	function selectPolitician() {
-	    var x = document.getElementById("thisPolitician").selectedIndex;
-	    var y = document.getElementById("thisPolitician").options;
-	    var mySelection = y[x].text;
-	    alert(mySelection);
-	}
-  </script>
-
   <div class="container-fluid">
 
     <!-- Keen Dashboard Layouts: http://keen.github.io/dashboards/layouts/ -->
@@ -83,75 +142,6 @@
           <div class="chart-stage">
             <div id="grid-1-1">
               <div id="chartOne" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
-              <script>
-              <!-- ENTER JAVASCRIPT CODE HERE --> 
-              <!-- Chart 1 - Stacked bar chart with expenses in multiple types per trip -->
-                Plotly.d3.csv("https://raw.githubusercontent.com/schlos/playground/gh-pages/dataset-sluzbenaputovanjaclanovavladeALL.csv", function(err, rows){
-
-                  function unpack(rows, key) {
-                  return rows.map(function(row) { return row[key]; });
-                }
-
-                // var thisPolitician = unpack(rows, 'Ime.i.prezime');
-                var politicianName = selectPolitician();
-
-                var trace1 = {
-                  type: "bar",
-                  name: 'Putni trošak',
-                  x: unpack(rows, 'Datum.putovanja.polazak'),
-                  y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
-                  text: unpack(rows, 'Odrediste'),
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: (return politicianName;)
-                  }]
-                }
-
-                var trace2 = {
-                  type: "bar",
-                  name: 'Trošak smještaja',
-                  x: unpack(rows, 'Datum.putovanja.polazak'),
-                  y: unpack(rows, 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn'),
-                  text: unpack(rows, 'Odrediste'),
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: (return politicianName;)
-                  }]
-                }
-
-                var trace3 = {
-                  type: "bar",
-                  name: 'Trošak reprezentacije',
-                  x: unpack(rows, 'Datum.putovanja.polazak'),
-                  y: unpack(rows, 'Iznos.troskova.reprezentacije.u.kn'),
-                  text: unpack(rows, 'Odrediste'),
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: (return politicianName;)
-                  }]
-                }
-
-                var data = [trace1,trace2,trace3];
-
-                var layout = {
-                  barmode: 'stack',
-                  separators: ',.0',
-                  yaxis: {showexponent: 'all',
-                  exponentformat: 'none'},
-                  showlegend: true,
-                  legend: {"orientation": "h"}
-                };
-
-
-                Plotly.newPlot('chartOne', data, layout);
-                })
-              </script>
             </div>
           </div>
           <div class="chart-notes">
@@ -167,73 +157,6 @@
           <div class="chart-stage">
             <div id="grid-1-1">
               <div id="chartTwo" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
-              <script>
-              <!-- ENTER JAVASCRIPT CODE HERE --> 
-              <!-- Chart 2 - Stacked bar chart with expenses per year -->
-                Plotly.d3.csv("https://raw.githubusercontent.com/schlos/playground/gh-pages/dataset-sluzbenaputovanjaclanovavladeALL.csv", function(err, rows){
-
-                  function unpack(rows, key) {
-                  return rows.map(function(row) { return row[key]; });
-                }
-
-                // var thisPolitician = unpack(rows, 'Ime.i.prezime');
-
-                var trace1 = {
-                  type: "bar",
-                  name: 'Putni trošak',
-                  x: unpack(rows, 'Godina'),
-                  y: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: "Gabrijela Žalac"
-                  }]
-                }
-
-                var trace2 = {
-                  type: "bar",
-                  name: 'Trošak smještaja',
-                  x: unpack(rows, 'Godina'),
-                  y: unpack(rows, 'Iznos.troskova.smjestaja.po.sluzbenom.putovanju.u.kn'),
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: "Gabrijela Žalac"
-                  }]
-                }
-
-                var trace3 = {
-                  type: "bar",
-                  name: 'Trošak reprezentacije',
-                  x: unpack(rows, 'Godina'),
-                  y: unpack(rows, 'Iznos.troskova.reprezentacije.u.kn'),
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: "Gabrijela Žalac"
-                  }]
-                }
-
-                var data = [trace1,trace2,trace3];
-
-                var layout = {
-                  barmode: 'stack',
-                  separators: ',.0',
-                  yaxis: {showexponent: 'all',
-                  exponentformat: 'none'},
-                  xaxis: {type: 'linear',
-              	  tickmode: 'linear'},
-                  showlegend: true,
-                  legend: {"orientation": "h"}
-                };
-
-
-                Plotly.newPlot('chartTwo', data, layout);
-                })
-              </script>
             </div>
           </div>
           <div class="chart-notes">
@@ -252,45 +175,6 @@
           <div class="chart-stage">
             <div id="grid-1-1">
               <div id="chartThree" style="width: 100%; height: 480px;"><!-- Plotly chart will be drawn inside this DIV --></div>
-              <script>
-              <!-- ENTER JAVASCRIPT CODE HERE --> 
-              <!-- Chart 3 - Scatter plot with cost for a trip per length of trip in a time -->
-                Plotly.d3.csv("https://raw.githubusercontent.com/schlos/playground/gh-pages/dataset-sluzbenaputovanjaclanovavladeALL.csv", function(err, rows){
-
-                  function unpack(rows, key) {
-                  return rows.map(function(row) { return row[key]; });
-                }
-
-                // var thisPolitician = unpack(rows, 'Ime.i.prezime');
-
-                var trace1 = {
-                  mode: 'markers',
-                  type: "scatter",
-                  name: 'Putni trošak',
-                  x: unpack(rows, 'Datum.putovanja.polazak'),
-                  y: unpack(rows, 'Trajanje.putovanja.dana'),
-                  marker: { size: unpack(rows, 'Broj.osoba.u.pratnji'), 
-                  color: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
-                  'showscale': true },
-                  text: unpack(rows, 'Iznos.putnih.troskova.po.sluzbenom.putovanju.u.kn'),
-                  transforms: [{
-                    type: 'filter',
-                    target: unpack(rows, 'Ime.i.prezime'),
-                    operation: '=',
-                    value: "Gabrijela Žalac"
-                  }]
-                }
-
-                var data = [trace1];
-
-                var layout = {
-                  showlegend: false
-                };
-
-
-                Plotly.newPlot('chartThree', data, layout);
-                })
-              </script>
             </div>
           </div>
           <div class="chart-notes">
@@ -392,6 +276,8 @@
   <script type="text/javascript" src="static/js/slider/jQDateRangeSlider.js"></script>
   <script type="text/javascript" src="static/js/slider/jQRuler.js"></script>
   <script type="text/javascript" src="static/js/slider/slider.js"></script> -->
+
+  <script type="text/javascript" src="index.js"></script>
 
 </body>
 </html>
